@@ -1,10 +1,16 @@
-// API Reference: https://www.wix.com/velo/reference/api-overview/introduction
-// “Hello, World!” Example: https://learn-code.wix.com/en/article/1-hello-world
-
 $w.onReady(function () {
-    // Write your JavaScript here
-
-    // To select an element by ID use: $w('#elementID')
-
-    // Click 'Preview' to run your code
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.z = 5;
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+    const loader = new THREE.GLTFLoader();
+    
+    // Use the raw GitHub URL here
+    loader.load('https://raw.githubusercontent.com/username/repository/main/path/to/your/model.glb', function (gltf) {
+        const model = gltf.scene;
+        scene.add(model);
+        renderer.render(scene, camera);
+    });
 });
