@@ -8,7 +8,7 @@ $w.onReady(function () {
     const loader = new THREE.GLTFLoader();
     
     // Use the raw GitHub URL here
-    loader.load('https://raw.githubusercontent.com/username/repository/main/path/to/your/model.glb', function (gltf) {
+    loader.load('https://github.com/kino101nene/my3dmodel2/blob/b182fecef8619acbd5b2a9fa116d6fc3c3d6b205/src/cube3.glb', function (gltf) {
         const model = gltf.scene;
         scene.add(model);
         renderer.render(scene, camera);
